@@ -1,6 +1,6 @@
 const pageValue = "1";
 
-const url = `http://localhost:8080/Lab1_war_exploded/helloServlet?page=${pageValue}`;
+const url = `http://localhost:8080/Lab1_war_exploded/helloServlet?page=${pageValue}&api=true`;
 
 fetch(url)
   .then(response => {
