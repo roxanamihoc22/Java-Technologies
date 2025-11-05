@@ -2,7 +2,6 @@ package com.example.Lab3;
 
 import com.example.Lab3.models.Customer;
 import com.example.Lab3.models.Order;
-import com.example.Lab3.DiscountService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +15,14 @@ public class LoyalDiscountService implements DiscountService {
 
     @Override
     public BigDecimal applyDiscount(Customer customer, Order order) {
-        BigDecimal discount = order.getTotalAmount().multiply(discountRate);
-        return order.getTotalAmount().subtract(discount);
+
+        if (customer.isLoyal()) {
+            BigDecimal discount = order.getTotalAmount().multiply(discountRate);
+            return order.getTotalAmount().subtract(discount);
+        }
+        else {
+            return order.getTotalAmount();
+        }
     }
 }
 

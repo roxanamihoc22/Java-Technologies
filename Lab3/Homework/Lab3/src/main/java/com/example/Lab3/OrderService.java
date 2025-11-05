@@ -26,6 +26,7 @@ public class OrderService {
 
         System.out.println("Discount type: " + discountService.getClass().getSimpleName() +
                 " Customer: " + customer.getName()+
+                " Customer loyalty " + customer.isLoyal() +
                 " Order amount: " + beforeDiscount +
                 " Discount: " + discountAmount +
                 " After Discount: " + afterDiscount);

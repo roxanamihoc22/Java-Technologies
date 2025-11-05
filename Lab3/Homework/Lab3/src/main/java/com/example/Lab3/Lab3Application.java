@@ -19,7 +19,7 @@ public class Lab3Application implements CommandLineRunner{
 
     @Override
     public void run(String... args) {
-        Order order = new Order(100L, 2L, new BigDecimal("600.00"));
+        Order order = new Order(100, 2L, new BigDecimal("600.00"));
         orderService.calculateFinalPrice(order);
     }
 

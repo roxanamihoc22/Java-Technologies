@@ -9,8 +9,8 @@ import java.util.Optional;
 @Repository
 public class CustomerRepository {
     private static final Map<Long, Customer> customers = Map.of(
-            1L, new Customer(1L, "Alice", true),
-            2L, new Customer(2L, "Bob", false)
+            1L, new Customer(1, "Popescu", true),
+            2L, new Customer(2, "Ionescu", false)
     );
 
     public Customer findById(Long id) {
