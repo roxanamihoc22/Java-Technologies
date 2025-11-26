@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.*;
 public interface InstructorRepository extends JpaRepository<Instructor, Long> {
 
     Instructor findByEmail(String email);
+
 }
 
 

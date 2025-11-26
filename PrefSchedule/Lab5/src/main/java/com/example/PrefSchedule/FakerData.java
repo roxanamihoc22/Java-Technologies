@@ -36,8 +36,6 @@ public class FakerData implements CommandLineRunner {
         Faker faker = new Faker(new Locale("en"));
         Random random = new Random();
 
-        System.out.println("=== Using Java Faker to populate database ===");
-
         List<Instructor> instructors = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             Instructor instructor = new Instructor(
@@ -102,7 +100,6 @@ public class FakerData implements CommandLineRunner {
                 "Complexity theory and algorithms."
         );
         courseRepo.save(newCourse);
-        System.out.println("Created: " + newCourse);
     }
 }
 

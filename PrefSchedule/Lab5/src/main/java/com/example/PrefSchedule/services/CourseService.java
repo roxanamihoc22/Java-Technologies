@@ -1,6 +1,7 @@
 package com.example.PrefSchedule.services;
 
 import com.example.PrefSchedule.entities.Course;
+import com.example.PrefSchedule.entities.Instructor;
 import com.example.PrefSchedule.repositories.CourseRepository;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,10 @@ public class CourseService {
 
     public List<Course> getByPackYear(int year, int semester) {
         return repo.findCoursesByPackYear(year);
+    }
+
+    public List<Course> getInstructorsWithCourses() {
+        return repo.findInstructorsWithCourses();
     }
 }
 

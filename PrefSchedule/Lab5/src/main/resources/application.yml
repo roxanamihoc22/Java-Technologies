@@ -6,9 +6,9 @@ spring:
     password: Roxana123
   sql:
     init:
-      mode: always
+      mode: never
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
 server:
   port: 8080

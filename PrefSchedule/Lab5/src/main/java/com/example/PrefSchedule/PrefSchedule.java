@@ -43,6 +43,8 @@ public class PrefSchedule implements CommandLineRunner {
         System.out.println("Course queries:");
         courseService.getByPackYear(1,1).forEach(System.out::println);
 
+        System.out.println("Instructor queries:");
+        courseService.getInstructorsWithCourses().forEach(System.out::println);
     }
 
 }
