@@ -9,5 +9,9 @@ public interface StudentPreferenceRepository extends JpaRepository<StudentPrefer
     List<StudentPreference> findByStudent(Student student);
 
     List<StudentPreference> findByStudentAndPack(Student student, Pack pack);
+
+    List<StudentPreference> findDistinctStudentsByPack(Pack pack);
+
+    List<StudentPreference> findByPack(Pack pack);
 }
 

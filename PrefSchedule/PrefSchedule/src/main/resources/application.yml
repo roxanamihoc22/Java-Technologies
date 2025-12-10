@@ -10,16 +10,28 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
-  kafka:
-    bootstrap-servers: localhost:9092
+#  kafka:
+#    bootstrap-servers: localhost:9092
+#
+#    consumer:
+#      group-id: prefschedule-group
+#      auto-offset-reset: earliest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+#      properties:
+#        spring.json.trusted.packages: "*"
+resilience4j:
+  retry:
+    instances:
+      stableMatchRetry:
+        max-attempts: 3
+        wait-duration: 2s
 
-    consumer:
-      group-id: prefschedule-group
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      properties:
-        spring.json.trusted.packages: "*"
+  timelimiter:
+    instances:
+      stableMatchTimeout:
+        timeout-duration: 4s
+
 app:
   kafka:
     topic: grades-topic

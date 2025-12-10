@@ -21,4 +21,6 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     @Modifying
     @Query("UPDATE Student s SET s.year = s.year + 1 WHERE s.year < 6")
     int promoteAllStudents();
+
+    List<Student> findByYear(int year);
 }
